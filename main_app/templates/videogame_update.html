@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<h1 class="pt-3">Update {{videogame.name}}</h1>
+
+<form action="" method="post">
+  {% csrf_token %} 
+   <div class="field">
+    <div class="control">
+      {%render_field form.name|append_attr:"class:input" placeholder="Name"%} 
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      {%render_field form.img|append_attr:"class:input" placeholder="Image"%}   
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      {%render_field form.bio|append_attr:"class:textarea" placeholder="Bio"%}   
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      {%render_field form.retro_videogame placeholder="Retro"%} Retro
+    </div>
+  </div>
+
+    
+  
+  <input type="submit" value="Submit" class="button is-info" /> 
+</form>
+
+{% endblock %}

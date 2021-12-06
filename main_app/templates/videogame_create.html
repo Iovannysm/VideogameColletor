@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% load widget_tweaks %}
+{% block content %}
+
+<h1>Add a Videogame</h1>
+
+<form method="post">
+<!-- Security Feature  -->
+  {% csrf_token %} 
+<!--  Generate inputs  -->
+
+  <div class="field">
+    <div class="control">
+      {%render_field form.name|append_attr:"class:input" placeholder="Name"%} 
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      {%render_field form.img|append_attr:"class:input" placeholder="Image"%}   
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      {%render_field form.bio|append_attr:"class:textarea" placeholder="Bio"%}   
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      {%render_field form.retro_videogame placeholder="Retro"%} Retro
+    </div>
+  </div>
+<!--  Submit form  -->
+  <input type="submit" value="Submit" class="button is-dark" />
+</form>
+
+{% endblock %}

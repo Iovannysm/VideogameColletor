@@ -1,0 +1,87 @@
+{% extends 'base.html' %} {% block content %}
+<div class="detail__img">
+  <img src="{{videogame.img}}" alt="{{videogame.name}}" />
+</div>
+<div class="detail__name">
+  {% if videogame.retro_videogame %}
+  <div class="icon-text">
+    <span class="icon has-text-info">
+      <i class="fas fa-check-circle"></i>
+    </span>
+    <span>Retro</span>
+  </div>
+  {% endif %}
+  <h1 class="title">{{videogame.name}}</h1>
+</div>
+<div class="detail__container">
+  <div class="buttons">
+    <a href="{% url 'videogame_update' videogame.pk %}" class="button is-info"> 
+      <span class="icon">
+        <i class="fas fa-edit"></i>
+      </span>
+    </a>
+    <a href="{% url 'videogame_delete' videogame.pk %}" class="button is-danger">
+      <span class="icon">
+        <i class="fas fa-trash-alt"></i>
+      </span>
+    </a>
+  </div>
+  <div class="detail__about">
+    <h4 class="title is-4">About</h4>
+    <p>{{videogame.bio}}</p>
+  </div>
+  <div class="detail__videogame mb-5">
+    <h3 class="title is-3">Levels</h3>
+
+    <form action="{% url 'level_create' videogame.pk %}" class="mb-5" method="POST">
+
+    {% csrf_token %}
+
+    <div class="field has-addons">
+      <div class="control">
+        <input type="text" name="title" placeholder="Title" class="input" required>
+      </div>
+      <div class="control">
+        <input type="text" name="element" placeholder="Element type" class="input" required>
+      </div>
+      <div class="control">
+        <input type="text" name="boss" placeholder="Boss" class="input" required>
+      </div>
+      <div class="control">
+        <input type="submit" value="Add Level" class="button is-primary">
+      </div>
+    </div>
+    
+    </form>
+
+
+    {% for level in videogame.levels.all %}
+
+    <div class="level">
+      <span>{{ forloop.counter }}</span>
+      <span>
+        <b>{{level.title}}</b>
+      </span>
+      <span>{{level.boss}}</span>
+      <span>{{level.element}}</span>
+      <form action="" method="post">
+        <a href="{% url 'level_delete' level.pk %}" class="button is-danger" class="buttom_delete">
+          <span class="icon is-small">
+            <i class="fas fa-times"></i>
+          </span>
+        </a>
+      </form>
+    </div>
+
+    {% empty %}
+
+    <article class="message">
+      <div class="message-header">
+        <p>No Levels Available</p>
+      </div>
+    </article>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
