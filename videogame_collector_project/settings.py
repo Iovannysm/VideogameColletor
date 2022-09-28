@@ -78,7 +78,11 @@ WSGI_APPLICATION = 'videogame_collector_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'videogames',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'rneZEwyJOYRf0a19qq2S',
+        'HOST': 'containers-us-west-69.railway.app',
+        'PORT': '5680', 
     }
 }
 
