@@ -135,7 +135,7 @@ pep8==1.7.1
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==7.2.0
-pip==21.3.1
+pip==21.2.2
 pkginfo==1.5.0.1
 pluggy==0.13.1
 ply==3.11
@@ -149,7 +149,7 @@ pycodestyle==2.9.1
 pycosat==0.6.3
 pycparser==2.20
 pycrypto==2.6.1
-pycurl==7.43.1
+pycurl==7.45.1
 pydocstyle==5.0.2
 pyflakes==2.5.0
 Pygments==2.6.1
