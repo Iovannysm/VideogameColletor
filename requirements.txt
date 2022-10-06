@@ -291,7 +291,6 @@ pyobjc-framework-VideoToolbox==8.5.1
 pyobjc-framework-Virtualization==8.5.1
 pyobjc-framework-Vision==8.5.1
 pyobjc-framework-WebKit==8.5.1
-pyodbc==4.0.0-unsupported
 pyOpenSSL==19.1.0
 pyparsing==2.4.7
 PyQt5==5.15.6
