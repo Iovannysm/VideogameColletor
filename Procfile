@@ -1,1 +1,1 @@
-web: gunicorn videogame_collector_project.wsgi --log file -
+web: gunicorn videogame_collector_project.wsgi --log-file -
